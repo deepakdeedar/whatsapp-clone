@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 void main()
 {
@@ -74,7 +75,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               Text('Camera'),
               Chats(),
               status(),
-              Text('Calls')
+              calls()
             ],
           ),
         ),
@@ -256,6 +257,92 @@ class _statusState extends State<status> {
         ),
       ),
     );
+  }
+}
+
+class calls extends StatefulWidget {
+  @override
+  _callsState createState() => _callsState();
+}
+
+class _callsState extends State<calls> {
+  @override
+  Widget build(BuildContext context) {
+     return Scaffold(
+       floatingActionButton: FloatingActionButton(
+         onPressed: (){},
+         backgroundColor: Colors.green,
+         child: Center(child: Icon(FontAwesome.phone),),
+       ),
+       body: Container(
+         child: ListView(
+           children: <Widget>[
+             ListTile(
+               leading: ClipRRect(
+                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                 child: Container(
+                   color: Colors.green,
+                   child: CircleAvatar(
+                     radius: 25.0,
+                     backgroundImage:NetworkImage("https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"),
+                   ),
+                 ),
+               ),
+               title: Text('Rahul'),
+               subtitle: Text('8 minutes ago'),
+               trailing: Icon(Icons.phone,color: Colors.green,),
+             ),
+             ListTile(
+               leading: ClipRRect(
+                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                 child: Container(
+                   color: Colors.green,
+                   child: CircleAvatar(
+                     radius: 25.0,
+                     backgroundImage:NetworkImage("https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"),
+                   ),
+                 ),
+               ),
+               title: Text('Kunal'),
+               subtitle: Text('Today, 5:46 PM'),
+               trailing: Icon(Icons.phone,color: Colors.green,),
+             ),
+             ListTile(
+               leading: ClipRRect(
+                 borderRadius: BorderRadius.all(Radius.circular(60.0)),
+                 child: Container(
+                   color: Colors.green,
+                   width: 50,
+                   height: 50,
+                   child: CircleAvatar(
+                     radius: 25.0,
+                     backgroundImage:NetworkImage("https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"),
+                   ),
+                 ),
+               ),
+               title: Text('Sham'),
+               subtitle: Text('Yesterday, 11:54 PM'),
+               trailing: Icon(Icons.phone,color: Colors.green,),
+             ),
+             ListTile(
+               leading: ClipRRect(
+                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                 child: Container(
+                   color: Colors.green,
+                   child: CircleAvatar(
+                     radius: 25.0,
+                     backgroundImage:NetworkImage("https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"),
+                   ),
+                 ),
+               ),
+               title: Text('Ram'),
+               subtitle: Text('Today, 8:25 AM'),
+               trailing: Icon(Icons.videocam,color: Colors.green,),
+             )
+           ],
+         ),
+       ),
+     );
   }
 }
 
